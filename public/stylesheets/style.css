@@ -10,9 +10,9 @@ h1 {
   color: #fefaea;
 }
 .question {
-  position: absolute;
+  position: relative;
   background-color: rgba(197, 197, 197, 0.85);
-  width: calc(100% - 150px);
+  width: calc(100% - 100px);
   margin: 0 auto;
   padding: 25px;
   border-radius: 15px;
@@ -80,7 +80,7 @@ span.correct {
     padding: 30px 20px;
   }
   .question {
-    width: calc(100% - 90px);
+    width: calc(100% - 50px);
     margin-bottom: 30px;
   }
   .answerbox {
