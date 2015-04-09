@@ -2,16 +2,27 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0 auto;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: #fefaea;
 }
 
 .question {
   position: absolute;
-  background-color: #c5c5c5;
-  width: 80%;
+  background-color: rgba(197,197,197,0.85);
+  width: calc(~'100% - 150px');
   margin: 0 auto;
   padding: 25px;
   border-radius: 15px;
   height: 500px;
+}
+
+.question img {
+  margin-bottom: 15px;
 }
 
 .questionText {
@@ -21,11 +32,11 @@ body {
 
 .answerbox {
   width: 60%;
-  padding: 5px;
+  padding: 5px 5px 3px 5px;
 }
 
 .answerbox.a, .answerbox.c {
-  background-color: #ddd;
+  background-color: rgba(221,221,221,0.55);
 }
 
 input[type='checkbox'] {
@@ -33,15 +44,20 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox'] + label {
+  width: calc(~'100% - 25px');
+}
+
+input[type='checkbox'] + label:before {
   background-image: url('../images/checkbox.png');
   background-repeat: no-repeat;
   background-position: 0 1px;
-  padding-left: 25px;
-  width: calc(100% - 25px);
+  width: 25px;
+  height: 16px;
   display: inline-block;
+  content: "";
 }
 
-input[type='checkbox']:checked + label {
+input[type='checkbox']:checked + label:before {
   background-position: 0 -24px;
 }
 
@@ -70,4 +86,18 @@ span.correct {
 
 .clear {
   clear: both;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 30px 20px;
+  }
+
+  .question {
+    width: calc(~'100% - 90px');
+  }
+
+  .answerbox {
+    width: 100%;
+  }
 }

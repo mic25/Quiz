@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   div.questions
-    each item, index in questions
+    each item, index in fn.shuffle(questions)
       div(id=item.id, class='question')
         h4 Frage #{index+1} / #{questions.length}
         p.questionText #{item.text}
@@ -26,3 +26,4 @@ block content
         span.correct
           | 0
         | &nbsp; von #{questions.length} Fragen richtig beantwortet.
+      button.restart Nochmal!

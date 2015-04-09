@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $('.answer').each(function(){
+        $(this).removeAttr('disabled');
+    });
     var correct = 0;
     var incorrect = 0;
     var questions = $('.question');
@@ -70,8 +73,15 @@ $(document).ready(function(){
         question.hide();
         for(var i = 0; i < questions.length; i++){
             if($(question).is($(questions[i]))){
-                $(questions[i+1]).show();
+                var nextQuestion = $(questions[i+1]);
+                nextQuestion.show();
+                nextQuestion.find('.answer').each(function(){
+                    $(this).removeAttr('disabled');
+                });
             }
         }
+    });
+    $('button.restart').click(function(){
+        location.reload(true);
     });
 });
