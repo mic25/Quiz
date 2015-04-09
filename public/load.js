@@ -43,14 +43,14 @@ $(document).ready(function(){
                         // answer with class response[i].key green
                         answers.each(function(){
                            if($(this).hasClass(response[i].key)) {
-                               $(this).parents('.answerbox').css('background-color', '#7ad476');
+                               $(this).parents('.answerbox').css('background-color', 'rgba(122,212,118,0.55)');
                            }
                         });
                     }else{
                         // answer with class response[i].key red
                         answers.each(function(){
                             if($(this).hasClass(response[i].key)) {
-                                $(this).parents('.answerbox').css('background-color', '#d47876');
+                                $(this).parents('.answerbox').css('background-color', 'rgba(212,122,118,0.55)');
                             }
                         });
                         correctAnswer = false
