@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  div.questions
+    each item, index in questions
+      div(id=item.id, class='question')
+        h4 Frage #{index+1} / #{questions.length}
+        p.questionText #{item.text}
+        if item.image
+            img(src=item.image)
+        div.answers
+          each answer, key in item.answers
+            div(class='answerbox '+key)
+              input(type='checkbox' name=key class='answer '+key id=item.id+key)
+              label(for=item.id+key).answerText #{answer}
+        div.clear
+        button.ok OK
+        button.next Weiter
+        div.clear
+    div.finished.question
+      p
+        | Das Quiz ist zu Ende!'
+      p
+        | Du hast &nbsp;
+        span.correct
+          | 0
+        | &nbsp; von #{questions.length} Fragen richtig beantwortet.
